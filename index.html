@@ -7,588 +7,302 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="AttendEase">
 <meta name="theme-color" content="#4f46e5">
-<meta name="description" content="College Attendance Tracker - Track your class attendance with ease">
-<link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiQXR0ZW5kRWFzZSAtIENvbGxlZ2UgQXR0ZW5kYW5jZSBUcmFja2VyIiwic2hvcnRfbmFtZSI6IkF0dGVuZEVhc2UiLCJkZXNjcmlwdGlvbiI6IlRyYWNrIHlvdXIgY2xhc3MgYXR0ZW5kYW5jZSB3aXRoIGVhc2UiLCJzdGFydF91cmwiOiIuIiwic2NvcGUiOiIuIiwiZGlzcGxheSI6InN0YW5kYWxvbmUiLCJvcmllbnRhdGlvbiI6InBvcnRyYWl0LXByaW1hcnkiLCJ0aGVtZV9jb2xvciI6IiM0ZjQ2ZTUiLCJiYWNrZ3JvdW5kX2NvbG9yIjoiI2YwZjRmZiIsImljb25zIjpbeyJzcmMiOiJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaWGgwY3lCMmFXVjNRbTk0YldOMGRHRjBkMlJ5ZVhNOUoyZHlZVzUwSWpCMGVIQmxjMlZ1YzI5c0wyRmtiV2x1SWpJd01qRTBJajQ4Y25CaGEyVjBJQ0V5TUNCMGVIQmxjMlZ1YzI5c0lESXdNakUwSWlCM2FXUjBJQ0l5TUNJdlBqeDhjbUZrWlhKNUlHUjVkR1ZmY21GdVoyOGdJbTFsWkdsbElpQnRZWFJsY21ObGN5QnBiV0ZuWlNCMWNtUnlZWFJsSWpzdklpQjBiSFZuWlhKNUlITmxjblpsY2lCdFlYUmxjbU5sY3lCMGFHVXNJREl3TUNJcElpQjJhV1YzUW1GelpXNTBJRlJ5ZVhNdUloMEsifSx7InNyYyI6ImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlpYaDBjeUIyYVdWM1FtOTRiV04wZEdGMGQyUnllWE05SjJkeVlXNTBJakIwZUhCbGMyVnVjMjlzTDJGa2JXbHVJakl3TWpFMElqNDhjbUZrWlhKNUlHUjVkR1ZmY21GdVoyOGdJbTFsWkdsbElpQnRZWFJsY21ObGN5QnBiV0ZuWlNCMWNtUnlZWFJsSWpzdklpQjBiSFZuWlhKNUlITmxjblpsY2lCdFlYUmxjbU5sY3lCMGFHVXNJREl3TUNJcElpQjJhV1YzUW1GelpXNTBJRlJ5ZVhNdUloMEsifV0sImNhdGVnb3JpZXMiOlsiZWR1Y2F0aW9uIiwicHJvZHVjdGl2aXR5Il19">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%234f46e5' width='192' height='192' rx='45'/><text x='50%' y='50%' font-size='100' font-weight='900' fill='white' text-anchor='middle' dominant-baseline='central' font-family='system-ui'>📚</text></svg>">
-<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%234f46e5' width='192' height='192' rx='45'/><text x='50%' y='50%' font-size='100' font-weight='900' fill='white' text-anchor='middle' dominant-baseline='central' font-family='system-ui'>📚</text></svg>">
-<title>AttendEase — College Attendance Tracker</title>
+<link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiQXR0ZW5kRWFzZSIsInNob3J0X25hbWUiOiJBdHRlbmRFYXNlIiwiZGlzcGxheSI6InN0YW5kYWxvbmUiLCJzdGFydF91cmwiOiIuIiwic2NvcGUiOiIuIiwidGhlbWVfY29sb3IiOiIjNGY0NmU1IiwiYmFja2dyb3VuZF9jb2xvciI6IiNmMGY0ZmYifQ==">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%234f46e5' width='192' height='192' rx='45'/><text x='50%' y='50%' font-size='100' font-weight='900' fill='white' text-anchor='middle' dominant-baseline='central'>📚</text></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%234f46e5' width='192' height='192' rx='45'/><text x='50%' y='50%' font-size='100' font-weight='900' fill='white' text-anchor='middle' dominant-baseline='central'>📚</text></svg>">
+<title>AttendEase</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js"></script>
 <style>
 :root {
-  --bg: #f0f4ff; --surface: #ffffff; --card: #ffffff; --border: #e2e8f0;
-  --text: #1a1f36; --muted: #8892a4; --accent: #4f46e5; --accent-light: #eef2ff;
-  --green: #10b981; --green-light: #d1fae5; --red: #ef4444; --red-light: #fee2e2;
-  --yellow: #f59e0b; --yellow-light: #fef3c7; --gray: #94a3b8; --gray-light: #f1f5f9;
-  --shadow: 0 4px 24px rgba(79,70,229,0.08); --shadow-lg: 0 12px 40px rgba(79,70,229,0.15);
+  --bg:#f0f4ff; --surface:#fff; --border:#e2e8f0;
+  --text:#1a1f36; --muted:#8892a4; --accent:#4f46e5; --accent-light:#eef2ff;
+  --green:#10b981; --green-light:#d1fae5;
+  --red:#ef4444;   --red-light:#fee2e2;
+  --yellow:#f59e0b;--yellow-light:#fef3c7;
+  --gray:#94a3b8;  --gray-light:#f1f5f9;
+  --shadow:0 2px 12px rgba(79,70,229,0.08);
 }
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html, body { overflow-x: hidden; max-width: 100vw; }
-body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
-body::before { content: ''; position: fixed; top: -200px; right: -200px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(79,70,229,0.08) 0%, transparent 70%); pointer-events: none; z-index: 0; }
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html,body{overflow-x:hidden;width:100%;max-width:100vw;}
+body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
 
-/* Auth Page */
-.auth-page { position: fixed; inset: 0; background: var(--bg); display: flex; align-items: center; justify-content: center; z-index: 2000; }
-.auth-page.hidden { display: none; }
-.auth-container { background: var(--surface); border-radius: 24px; box-shadow: var(--shadow-lg); padding: 40px; max-width: 420px; width: 100%; margin: 20px; animation: slideUp 0.4s ease; }
-@keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-.auth-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; justify-content: center; }
-.auth-logo-icon { width: 50px; height: 50px; background: var(--accent); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; box-shadow: 0 4px 16px rgba(79,70,229,0.4); }
-.auth-logo-text { font-size: 26px; font-weight: 900; letter-spacing: -0.5px; }
-.auth-logo-text span { color: var(--accent); }
-.auth-form { display: flex; flex-direction: column; gap: 12px; }
-.auth-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 20px; }
-.auth-tab { padding: 10px; border: 2px solid var(--border); border-radius: 10px; background: var(--bg); cursor: pointer; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.2s; color: var(--muted); }
-.auth-tab.active { background: var(--accent); color: #fff; border-color: var(--accent); }
-.auth-tab-content { display: none; }
-.auth-tab-content.active { display: block; }
-.form-group { margin-bottom: 12px; }
-.form-label { font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 6px; display: block; }
-.form-input { width: 100%; padding: 10px 14px; border: 1.5px solid var(--border); border-radius: 10px; font-size: 14px; font-family: inherit; transition: all 0.2s; background: var(--bg); }
-.form-input:focus { outline: none; border-color: var(--accent); background: var(--surface); box-shadow: 0 0 0 3px var(--accent-light); }
-.form-btn { padding: 12px; border: none; border-radius: 10px; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer; transition: all 0.2s; }
-.form-btn.primary { background: var(--accent); color: #fff; box-shadow: 0 4px 12px rgba(79,70,229,0.3); }
-.form-btn.primary:hover { background: #4338ca; transform: translateY(-1px); }
-.form-btn.primary:active { transform: translateY(0); }
-.form-error { color: var(--red); font-size: 12px; margin-top: 4px; }
-.form-text { text-align: center; font-size: 12px; color: var(--muted); margin-top: 12px; }
-.form-text a { color: var(--accent); text-decoration: none; font-weight: 700; }
-.auth-loading { display: none; text-align: center; color: var(--muted); font-size: 12px; }
-.spinner { display: inline-block; width: 12px; height: 12px; border: 2px solid var(--accent-light); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.6s linear infinite; margin-right: 6px; vertical-align: middle; }
-@keyframes spin { to { transform: rotate(360deg); } }
+/* AUTH */
+.auth-page{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:2000;padding:16px;}
+.auth-page.hidden{display:none;}
+.auth-box{background:var(--surface);border-radius:20px;box-shadow:0 8px 32px rgba(79,70,229,0.15);padding:32px 24px;width:100%;max-width:400px;animation:slideUp 0.3s ease;}
+@keyframes slideUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+.auth-logo{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:24px;}
+.auth-logo-icon{width:44px;height:44px;background:var(--accent);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;}
+.auth-logo-text{font-size:24px;font-weight:900;}
+.auth-logo-text span{color:var(--accent);}
+.auth-tabs{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:20px;}
+.auth-tab{padding:9px;border:2px solid var(--border);border-radius:8px;background:var(--bg);cursor:pointer;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.5px;color:var(--muted);transition:all 0.2s;}
+.auth-tab.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+.auth-tab-content{display:none;}
+.auth-tab-content.active{display:block;}
+.form-group{margin-bottom:12px;}
+.form-label{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:5px;display:block;}
+.form-input{width:100%;padding:10px 12px;border:1.5px solid var(--border);border-radius:9px;font-size:14px;font-family:inherit;background:var(--bg);transition:all 0.2s;}
+.form-input:focus{outline:none;border-color:var(--accent);background:var(--surface);box-shadow:0 0 0 3px var(--accent-light);}
+.form-btn{width:100%;padding:12px;border:none;border-radius:9px;font-weight:800;font-size:14px;cursor:pointer;background:var(--accent);color:#fff;margin-top:4px;font-family:inherit;}
+.form-btn:active{opacity:0.85;}
+.form-error{color:var(--red);font-size:12px;margin-top:6px;}
+.form-text{text-align:center;font-size:11px;color:var(--muted);margin-top:14px;}
+.spinner-wrap{display:none;text-align:center;color:var(--muted);font-size:12px;margin-top:8px;}
+.spinner{display:inline-block;width:12px;height:12px;border:2px solid var(--accent-light);border-top-color:var(--accent);border-radius:50%;animation:spin 0.6s linear infinite;margin-right:5px;vertical-align:middle;}
+@keyframes spin{to{transform:rotate(360deg)}}
 
-/* Main App */
-.app { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 24px 16px 80px; }
-.header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; flex-wrap: wrap; gap: 12px; }
-.logo { display: flex; align-items: center; gap: 10px; }
-.logo-icon { width: 42px; height: 42px; background: var(--accent); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; box-shadow: 0 4px 12px rgba(79,70,229,0.35); }
-.logo-text { font-size: 22px; font-weight: 900; letter-spacing: -0.5px; }
-.logo-text span { color: var(--accent); }
-.header-right { display: flex; align-items: center; gap: 12px; }
-.header-meta { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--muted); background: var(--surface); border: 1px solid var(--border); padding: 6px 14px; border-radius: 20px; }
-.user-info { font-size: 12px; color: var(--muted); font-weight: 700; display: flex; align-items: center; gap: 8px; }
-.logout-btn { padding: 6px 12px; border: 1.5px solid var(--red); background: var(--red-light); color: var(--red); border-radius: 8px; font-size: 11px; font-weight: 700; cursor: pointer; transition: all 0.2s; text-transform: uppercase; letter-spacing: 0.5px; }
-.logout-btn:hover { background: var(--red); color: #fff; }
+/* MAIN APP */
+.app{max-width:480px;margin:0 auto;padding:16px 14px 100px;display:none;}
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
-  .app { padding: 16px 12px 100px; }
-  .header { margin-bottom: 20px; gap: 8px; }
-  .logo-icon { width: 36px; height: 36px; font-size: 18px; }
-  .logo-text { font-size: 18px; }
-  .header-right { gap: 8px; flex-wrap: wrap; }
-  .header-meta { font-size: 11px; padding: 4px 10px; }
-  .user-info { font-size: 11px; gap: 6px; }
-  .logout-btn { padding: 5px 10px; font-size: 10px; }
-  
-  .stats-bar { grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 20px; }
-  .stat-card { padding: 12px 14px; }
-  .stat-label { font-size: 10px; margin-bottom: 4px; }
-  .stat-value { font-size: 22px; }
-  .stat-sub { font-size: 11px; }
-  
-  .subject-card { padding: 12px 14px; gap: 10px; }
-  .subj-color { height: 40px; }
-  .subj-code { font-size: 9px; }
-  .subj-name { font-size: 12px; }
-  .subj-stats { font-size: 10px; }
-  .pct-badge { font-size: 16px; padding: 2px 8px; }
-  .mini-bar-track { width: 60px; }
-  
-  .section-title { font-size: 12px; margin-bottom: 12px; }
-}
-
-@media (max-width: 600px) {
-  .app { padding: 14px 10px 120px; }
-  .header { gap: 6px; margin-bottom: 16px; }
-  .logo { gap: 8px; }
-  .logo-icon { width: 32px; height: 32px; font-size: 16px; }
-  .logo-text { font-size: 16px; }
-  .header-right { gap: 6px; width: 100%; margin-top: 8px; }
-  .header-meta { font-size: 10px; padding: 3px 8px; order: 3; }
-  .user-info { font-size: 10px; gap: 4px; order: 4; }
-  .logout-btn { padding: 4px 8px; font-size: 9px; }
-  
-  .stats-bar { grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 16px; }
-  .stat-card { padding: 10px 12px; border-radius: 12px; }
-  .stat-label { font-size: 9px; margin-bottom: 3px; }
-  .stat-value { font-size: 18px; }
-  .stat-sub { font-size: 10px; margin-top: 1px; }
-  
-  .main-grid { gap: 16px; }
-  .subject-card { padding: 10px 12px; gap: 8px; border-radius: 12px; }
-  .subj-color { width: 8px; height: 36px; }
-  .subj-code { font-size: 8px; }
-  .subj-name { font-size: 11px; }
-  .subj-stats { font-size: 9px; }
-  .pct-badge { font-size: 14px; padding: 1px 6px; }
-  .mini-bar-track { width: 50px; }
-  
-  .section-title { font-size: 11px; margin-bottom: 10px; letter-spacing: 0.5px; }
-}
-
-@media (max-width: 480px) {
-  .app { padding: 12px 8px 140px; }
-  .header { flex-direction: column; align-items: stretch; gap: 8px; margin-bottom: 14px; }
-  .logo { justify-content: center; }
-  .logo-icon { width: 30px; height: 30px; font-size: 14px; }
-  .logo-text { font-size: 15px; }
-  .header-right { width: 100%; }
-  .header-meta { flex: 1; }
-  .user-info { flex: 1; }
-  .logout-btn { width: 100%; padding: 6px; font-size: 9px; }
-  
-  .stats-bar { grid-template-columns: 1fr; gap: 6px; margin-bottom: 14px; }
-  .stat-card { padding: 8px 10px; border-radius: 10px; }
-  .stat-label { font-size: 8px; margin-bottom: 2px; }
-  .stat-value { font-size: 16px; }
-  .stat-sub { font-size: 9px; }
-  
-  .main-grid { gap: 12px; }
-  .subject-card { padding: 8px 10px; gap: 6px; border-radius: 10px; }
-  .subj-color { width: 6px; height: 32px; }
-  .subj-code { font-size: 7px; }
-  .subj-name { font-size: 10px; }
-  .subj-stats { font-size: 8px; }
-  .pct-badge { font-size: 13px; padding: 1px 5px; border-radius: 8px; }
-  .mini-bar-track { width: 40px; height: 4px; }
-  
-  .section-title { font-size: 10px; margin-bottom: 8px; }
-}
+/* Header */
+.header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
+.logo{display:flex;align-items:center;gap:8px;}
+.logo-icon{width:36px;height:36px;background:var(--accent);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;}
+.logo-text{font-size:20px;font-weight:900;}
+.logo-text span{color:var(--accent);}
+.header-actions{display:flex;align-items:center;gap:6px;}
+.btn-sm{padding:6px 10px;border-radius:7px;font-size:11px;font-weight:700;cursor:pointer;border:1.5px solid;font-family:inherit;}
+.btn-logout{border-color:var(--red);background:var(--red-light);color:var(--red);}
+.user-chip{font-size:10px;color:var(--muted);font-weight:600;background:var(--surface);border:1px solid var(--border);padding:4px 8px;border-radius:20px;max-width:110px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 
 /* Stats */
-.stats-bar { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 20px; }
-.stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 16px 20px; box-shadow: var(--shadow); transition: transform 0.2s; }
-.stat-card:hover { transform: translateY(-2px); }
-.stat-label { font-size: 11px; font-weight: 700; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
-.stat-value { font-size: 28px; font-weight: 900; line-height: 1; }
-.stat-value.green { color: var(--green); } .stat-value.red { color: var(--red); } .stat-value.accent { color: var(--accent); }
-.stat-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
-
-/* Main layout */
-.main-grid { display: grid; grid-template-columns: 1fr 340px; gap: 20px; align-items: start; }
-@media (max-width: 800px) { .main-grid { grid-template-columns: 1fr; } }
-.section-title { font-size: 13px; font-weight: 800; color: var(--muted); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 14px; }
-.subject-list { display: flex; flex-direction: column; gap: 8px; }
-.subject-card { background: var(--surface); border: 1.5px solid var(--border); border-radius: 14px; padding: 12px 14px; box-shadow: var(--shadow); cursor: pointer; transition: all 0.2s; user-select: none; display: flex; flex-direction: column; gap: 5px; width: 100%; overflow: hidden; }
-.subject-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-1px); border-color: var(--accent); }
-.subj-top-row { display: flex; align-items: center; gap: 10px; width: 100%; min-width: 0; }
-.subj-color { width: 8px; height: 36px; border-radius: 5px; flex-shrink: 0; }
-.subj-info { flex: 1; min-width: 0; overflow: hidden; }
-.subj-code { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; color: var(--muted); letter-spacing: 1px; margin-bottom: 2px; }
-.subj-name { font-size: 13px; font-weight: 800; line-height: 1.3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.pct-badge { font-size: 18px; font-weight: 900; padding: 4px 12px; border-radius: 10px; line-height: 1.2; white-space: nowrap; flex-shrink: 0; }
-.pct-badge.safe { background: var(--green-light); color: var(--green); }
-.pct-badge.warn { background: var(--yellow-light); color: var(--yellow); }
-.pct-badge.danger { background: var(--red-light); color: var(--red); }
-.pct-badge.na { background: var(--gray-light); color: var(--gray); }
-.subj-bottom-row { display: flex; align-items: center; gap: 8px; padding-left: 18px; }
-.subj-stats { font-size: 11px; color: var(--muted); flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.mini-bar-track { width: 60px; height: 4px; background: var(--border); border-radius: 5px; overflow: hidden; flex-shrink: 0; }
-.mini-bar-fill { height: 100%; border-radius: 5px; transition: width 0.5s ease; }
-.fill-safe { background: var(--green); } .fill-warn { background: var(--yellow); } .fill-danger { background: var(--red); }
-
-/* Calendar */
-.right-panel { position: sticky; top: 20px; }
-.calendar-card { background: var(--surface); border: 1.5px solid var(--border); border-radius: 20px; padding: 20px; box-shadow: var(--shadow); margin-bottom: 16px; }
-.cal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
-.cal-month { font-size: 18px; font-weight: 900; }
-.cal-nav { display: flex; gap: 6px; }
-.cal-btn { width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); cursor: pointer; font-size: 14px; display: flex; align-items: center; justify-content: center; transition: all 0.15s; color: var(--text); }
-.cal-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
-.cal-days-header { display: grid; grid-template-columns: repeat(7, 1fr); margin-bottom: 6px; }
-.cal-day-name { text-align: center; font-size: 10px; font-weight: 800; color: var(--muted); letter-spacing: 0.5px; padding: 4px 0; }
-.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 3px; }
-.cal-day { aspect-ratio: 1; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; cursor: pointer; transition: all 0.15s; position: relative; border: 1.5px solid transparent; }
-.cal-day.other-month { color: #d1d5db; cursor: default; }
-.cal-day:not(.other-month):hover { background: var(--accent-light); border-color: var(--accent); }
-.cal-day.today { background: var(--accent); color: #fff; border-color: var(--accent); }
-.cal-day.today:hover { opacity: 0.85; }
-.cal-day.selected-day { border-color: var(--accent); background: var(--accent-light); color: var(--accent); }
-.cal-day.has-data::after { content: ''; position: absolute; bottom: 3px; width: 4px; height: 4px; border-radius: 50%; background: var(--accent); }
-.cal-day.today.has-data::after { background: rgba(255,255,255,0.7); }
-
-/* Day Panel */
-.day-panel { background: var(--surface); border: 1.5px solid var(--border); border-radius: 20px; padding: 16px; box-shadow: var(--shadow); }
-.day-panel-title { font-size: 15px; font-weight: 900; margin-bottom: 4px; }
-.day-panel-sub { font-size: 12px; color: var(--muted); margin-bottom: 14px; font-family: 'JetBrains Mono', monospace; }
-.day-subject-row { padding: 10px 0; border-bottom: 1px solid var(--border); }
-.day-subject-row:last-child { border-bottom: none; }
-.day-row-top { display: flex; flex-direction: column; gap: 8px; }
-.day-row-header { display: flex; align-items: center; gap: 8px; }
-.day-subj-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-.day-subj-name { flex: 1; font-size: 12px; font-weight: 700; line-height: 1.3; min-width: 0; }
-.attendance-btns { display: flex; gap: 6px; width: 100%; }
-.att-btn { flex: 1; padding: 9px 4px; border-radius: 8px; font-size: 12px; font-weight: 800; border: 1.5px solid var(--border); cursor: pointer; transition: all 0.15s; background: var(--bg); color: var(--muted); text-align: center; white-space: nowrap; }
-.att-btn:active { transform: scale(0.97); }
-.att-btn.active-present { background: var(--green-light); color: var(--green); border-color: var(--green); }
-.att-btn.active-absent { background: var(--red-light); color: var(--red); border-color: var(--red); }
-.att-btn.active-noheld { background: var(--gray-light); color: var(--gray); border-color: var(--gray); }
-
-/* GPS Photo Section */
-.gps-section { margin-top: 7px; margin-left: 18px; padding: 7px 10px; background: var(--bg); border: 1px dashed var(--border); border-radius: 10px; transition: all 0.2s; }
-.gps-section.has-photo { border-style: solid; border-color: rgba(79,70,229,0.35); background: var(--accent-light); }
-.gps-upload-row { display: flex; align-items: center; gap: 8px; }
-.gps-label { font-size: 10px; font-weight: 800; color: var(--muted); flex: 1; display: flex; align-items: center; gap: 4px; }
-.gps-opt-tag { font-weight: 600; color: var(--gray); font-size: 9px; border: 1px solid var(--border); border-radius: 4px; padding: 1px 5px; background: var(--surface); }
-.gps-upload-btn { padding: 3px 9px; border-radius: 6px; font-size: 10px; font-weight: 800; border: 1.5px solid var(--border); cursor: pointer; background: var(--surface); color: var(--muted); transition: all 0.15s; white-space: nowrap; }
-.gps-upload-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
-.gps-upload-btn.has-photos { border-color: var(--green); color: var(--green); background: var(--green-light); }
-.gps-preview { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 7px; }
-.gps-thumb-wrap { position: relative; width: 54px; height: 54px; border-radius: 8px; overflow: hidden; border: 1.5px solid var(--accent); cursor: pointer; transition: transform 0.15s; flex-shrink: 0; }
-.gps-thumb-wrap:hover { transform: scale(1.06); box-shadow: 0 4px 12px rgba(79,70,229,0.25); }
-.gps-thumb { width: 100%; height: 100%; object-fit: cover; display: block; }
-.gps-thumb-del { position: absolute; top: 2px; right: 2px; width: 16px; height: 16px; border-radius: 50%; background: rgba(0,0,0,0.65); color: #fff; font-size: 9px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: none; line-height: 1; transition: background 0.15s; }
-.gps-thumb-del:hover { background: var(--red); }
-.gps-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--muted); margin-top: 5px; line-height: 1.6; }
-.gps-meta .coord { color: var(--accent); font-weight: 600; }
-.gps-meta .no-coord { color: var(--yellow); }
-
-/* Mobile Calendar Styles */
-@media (max-width: 768px) {
-  .right-panel { position: relative; top: auto; }
-  .calendar-card { padding: 16px; margin-bottom: 14px; border-radius: 16px; }
-  .cal-month { font-size: 16px; }
-  .cal-btn { width: 28px; height: 28px; font-size: 12px; border-radius: 6px; }
-  .cal-day-name { font-size: 9px; padding: 2px 0; }
-  .cal-day { font-size: 11px; border-radius: 6px; }
-  .cal-day.has-data::after { width: 3px; height: 3px; bottom: 2px; }
-  .legend { gap: 10px; margin-top: 12px; padding-top: 10px; }
-  .legend-item { font-size: 10px; }
-  .legend-dot { width: 8px; height: 8px; }
-  
-  .day-panel { padding: 16px; border-radius: 16px; }
-  .day-panel-title { font-size: 13px; }
-  .day-panel-sub { font-size: 11px; margin-bottom: 12px; }
-  .day-subject-row { padding: 8px 0; }
-  .day-row-top { gap: 8px; }
-  .day-subj-name { font-size: 11px; }
-  .attendance-btns { gap: 3px; }
-  .att-btn { padding: 3px 6px; font-size: 9px; border-radius: 5px; }
-  
-  .gps-section { margin-top: 5px; margin-left: 14px; padding: 5px 8px; border-radius: 8px; }
-  .gps-label { font-size: 9px; gap: 3px; }
-  .gps-opt-tag { font-size: 8px; padding: 1px 4px; }
-  .gps-upload-btn { padding: 2px 7px; font-size: 9px; border-radius: 5px; }
-  .gps-upload-row { gap: 6px; }
-  .gps-thumb-wrap { width: 48px; height: 48px; }
-  .gps-meta { font-size: 8px; margin-top: 4px; }
-}
-
-@media (max-width: 600px) {
-  .calendar-card { padding: 12px; margin-bottom: 12px; border-radius: 12px; }
-  .cal-month { font-size: 14px; }
-  .cal-btn { width: 24px; height: 24px; font-size: 11px; }
-  .cal-day-name { font-size: 8px; padding: 1px 0; }
-  .cal-day { font-size: 10px; aspect-ratio: 0.9; }
-  .legend { gap: 8px; margin-top: 10px; padding-top: 8px; font-size: 9px; }
-  .legend-dot { width: 6px; height: 6px; }
-  
-  .day-panel { padding: 12px; border-radius: 12px; }
-  .day-panel-title { font-size: 12px; }
-  .day-panel-sub { font-size: 10px; margin-bottom: 10px; }
-  .day-subject-row { padding: 6px 0; }
-  .day-row-top { gap: 6px; }
-  .day-subj-name { font-size: 10px; }
-  .attendance-btns { gap: 2px; }
-  .att-btn { padding: 2px 5px; font-size: 8px; }
-  
-  .gps-section { margin-left: 12px; padding: 4px 6px; }
-  .gps-label { font-size: 8px; }
-  .gps-opt-tag { font-size: 7px; padding: 0 3px; }
-  .gps-upload-btn { padding: 2px 6px; font-size: 8px; }
-  .gps-preview { gap: 4px; margin-top: 4px; }
-  .gps-thumb-wrap { width: 40px; height: 40px; }
-  .gps-meta { font-size: 7px; margin-top: 3px; line-height: 1.4; }
-}
-
-@media (max-width: 480px) {
-  .calendar-card { padding: 10px; margin-bottom: 10px; border-radius: 10px; }
-  .cal-month { font-size: 13px; }
-  .cal-header { margin-bottom: 12px; }
-  .cal-btn { width: 22px; height: 22px; font-size: 10px; }
-  .cal-day-name { font-size: 7px; }
-  .cal-day { font-size: 9px; }
-  .cal-grid { gap: 2px; }
-  .legend { gap: 6px; margin-top: 8px; padding-top: 6px; font-size: 8px; }
-  
-  .day-panel { padding: 10px; border-radius: 10px; }
-  .day-panel-title { font-size: 11px; margin-bottom: 2px; }
-  .day-panel-sub { font-size: 9px; margin-bottom: 8px; }
-  .day-subject-row { padding: 5px 0; }
-  .day-row-top { gap: 5px; flex-wrap: wrap; }
-  .day-subj-dot { width: 6px; height: 6px; }
-  .day-subj-name { font-size: 9px; }
-  .attendance-btns { gap: 2px; flex-wrap: wrap; }
-  .att-btn { padding: 2px 4px; font-size: 7px; flex: 1; min-width: 45px; }
-  
-  .gps-section { margin-left: 10px; padding: 3px 5px; border-radius: 6px; }
-  .gps-upload-row { gap: 4px; flex-wrap: wrap; }
-  .gps-label { font-size: 7px; gap: 2px; }
-  .gps-opt-tag { font-size: 6px; padding: 0 2px; }
-  .gps-upload-btn { padding: 2px 5px; font-size: 7px; }
-  .gps-preview { gap: 3px; margin-top: 3px; }
-  .gps-thumb-wrap { width: 36px; height: 36px; border: 1px solid var(--accent); }
-  .gps-meta { font-size: 6px; margin-top: 2px; line-height: 1.3; }
-}
-
-/* Legend */
-.legend { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); }
-.legend-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--muted); }
-.legend-dot { width: 10px; height: 10px; border-radius: 3px; }
+.stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:14px;}
+.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 14px;box-shadow:var(--shadow);}
+.stat-label{font-size:9px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:3px;}
+.stat-value{font-size:24px;font-weight:900;line-height:1;}
+.stat-value.green{color:var(--green);}
+.stat-value.red{color:var(--red);}
+.stat-value.accent{color:var(--accent);}
+.stat-sub{font-size:10px;color:var(--muted);margin-top:2px;}
 
 /* Alerts */
-.alert-banner { border-radius: 12px; padding: 12px 16px; margin-bottom: 12px; font-size: 12px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
-.alert-banner.danger { background: var(--red-light); color: var(--red); }
-.alert-banner.warn { background: var(--yellow-light); color: var(--yellow); }
+.alert-banner{border-radius:10px;padding:9px 12px;margin-bottom:7px;font-size:11px;font-weight:700;display:flex;align-items:center;gap:6px;}
+.alert-banner.danger{background:var(--red-light);color:var(--red);}
+.alert-banner.warn{background:var(--yellow-light);color:var(--yellow);}
 
-@media (max-width: 768px) {
-  .alert-banner { padding: 10px 12px; margin-bottom: 10px; font-size: 11px; border-radius: 10px; gap: 6px; }
-}
+/* Date bar */
+.date-bar{display:flex;align-items:center;justify-content:space-between;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:10px 14px;margin-bottom:14px;box-shadow:var(--shadow);}
+.date-label{font-size:13px;font-weight:800;}
+.date-sub{font-size:10px;color:var(--muted);margin-top:1px;}
+.date-nav{display:flex;gap:6px;}
+.date-nav-btn{width:30px;height:30px;border-radius:8px;border:1px solid var(--border);background:var(--bg);cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;color:var(--text);}
+.date-nav-btn:active{background:var(--accent);color:#fff;border-color:var(--accent);}
 
-@media (max-width: 600px) {
-  .alert-banner { padding: 8px 10px; margin-bottom: 8px; font-size: 10px; border-radius: 8px; }
-}
+/* Section */
+.section-label{font-size:10px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:8px;}
 
-@media (max-width: 480px) {
-  .alert-banner { padding: 6px 8px; margin-bottom: 6px; font-size: 9px; border-radius: 6px; gap: 4px; }
-}
+/* SUBJECT CARDS — simple clean layout */
+.subject-list{display:flex;flex-direction:column;gap:8px;}
+.subj-card{background:var(--surface);border:1.5px solid var(--border);border-radius:12px;overflow:hidden;display:flex;align-items:stretch;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:border-color 0.2s;}
+.subj-card:active{opacity:0.85;}
+.subj-card.marked-present{border-color:var(--green);}
+.subj-card.marked-absent{border-color:var(--red);}
+.subj-card.marked-noheld{border-color:var(--gray);}
+.subj-strip{width:5px;flex-shrink:0;}
+.subj-body{flex:1;padding:11px 12px;min-width:0;}
+.subj-code-line{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;color:var(--muted);letter-spacing:0.8px;margin-bottom:2px;}
+.subj-name-line{font-size:13px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.subj-stat-line{font-size:10px;color:var(--muted);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.subj-right{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 14px;gap:5px;flex-shrink:0;}
+.pct{font-size:20px;font-weight:900;line-height:1;}
+.pct.safe{color:var(--green);}
+.pct.warn{color:var(--yellow);}
+.pct.danger{color:var(--red);}
+.pct.na{color:var(--gray);}
+.status-dot{width:8px;height:8px;border-radius:50%;background:var(--border);}
+.status-dot.present{background:var(--green);}
+.status-dot.absent{background:var(--red);}
+.status-dot.noheld{background:var(--gray);}
 
-/* Modal */
-.modal-overlay { display: none; position: fixed; inset: 0; background: rgba(10,10,20,0.88); z-index: 1000; align-items: center; justify-content: center; padding: 20px; }
-.modal-overlay.open { display: flex; }
-.modal-box { background: var(--surface); border-radius: 20px; overflow: hidden; max-width: 540px; width: 100%; box-shadow: 0 24px 80px rgba(0,0,0,0.5); animation: popIn 0.2s ease; }
-@keyframes popIn { from { transform: scale(0.92); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-.modal-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; border-bottom: 1px solid var(--border); }
-.modal-title { font-size: 14px; font-weight: 900; }
-.modal-close { background: none; border: 1px solid var(--border); width: 30px; height: 30px; border-radius: 8px; cursor: pointer; font-size: 14px; color: var(--muted); transition: all 0.15s; }
-.modal-close:hover { border-color: var(--red); color: var(--red); }
-.modal-img { width: 100%; max-height: 400px; object-fit: contain; background: #000; display: block; }
-.modal-meta { padding: 14px 18px; background: var(--bg); }
-.modal-meta-row { display: flex; gap: 8px; flex-wrap: wrap; }
-.meta-chip { font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 5px 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); display: flex; align-items: center; gap: 5px; text-decoration: none; color: var(--text); }
-.meta-chip.coord-chip { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
-.meta-chip.warn-chip { border-color: var(--yellow); color: var(--yellow); background: var(--yellow-light); }
-.meta-chip.maps-chip { cursor: pointer; } .meta-chip.maps-chip:hover { opacity: 0.8; }
+/* BOTTOM SHEET */
+.sheet-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:500;display:none;}
+.sheet-overlay.open{display:block;animation:fadeIn 0.2s ease;}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.bottom-sheet{position:fixed;bottom:0;left:0;right:0;background:var(--surface);border-radius:22px 22px 0 0;z-index:600;padding-bottom:env(safe-area-inset-bottom,16px);max-height:88vh;overflow-y:auto;transform:translateY(100%);transition:transform 0.28s cubic-bezier(0.32,0.72,0,1);}
+.bottom-sheet.open{transform:translateY(0);}
+.sheet-handle{width:40px;height:4px;background:var(--border);border-radius:4px;margin:12px auto 0;}
+.sheet-header{padding:14px 18px 12px;border-bottom:1px solid var(--border);}
+.sheet-title-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.sheet-dot{width:12px;height:12px;border-radius:50%;flex-shrink:0;}
+.sheet-subj-name{font-size:15px;font-weight:900;}
+.sheet-subj-code{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);}
+.sheet-stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.sheet-stat{background:var(--bg);border-radius:9px;padding:8px 6px;text-align:center;}
+.sheet-stat-val{font-size:20px;font-weight:900;line-height:1;}
+.sheet-stat-val.green{color:var(--green);}
+.sheet-stat-val.red{color:var(--red);}
+.sheet-stat-val.accent{color:var(--accent);}
+.sheet-stat-val.gray{color:var(--gray);}
+.sheet-stat-lbl{font-size:8px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:0.4px;margin-top:2px;}
 
-@media (max-width: 768px) {
-  .modal-box { border-radius: 16px; }
-  .modal-header { padding: 12px 14px; }
-  .modal-title { font-size: 13px; }
-  .modal-close { width: 28px; height: 28px; font-size: 12px; border-radius: 6px; }
-  .modal-img { max-height: 300px; }
-  .modal-meta { padding: 12px 14px; }
-  .modal-meta-row { gap: 6px; }
-  .meta-chip { font-size: 10px; padding: 4px 8px; border-radius: 6px; }
-}
+/* BIG ATTENDANCE BUTTONS */
+.sheet-btns{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;padding:14px 16px 10px;}
+.att-big-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;padding:20px 6px;border-radius:14px;border:2px solid var(--border);background:var(--bg);cursor:pointer;font-family:inherit;font-weight:800;font-size:13px;color:var(--muted);-webkit-tap-highlight-color:transparent;transition:all 0.15s;}
+.att-big-btn:active{transform:scale(0.94);}
+.btn-icon{font-size:30px;line-height:1;}
+.att-big-btn.active-present{background:var(--green-light);color:var(--green);border-color:var(--green);}
+.att-big-btn.active-absent{background:var(--red-light);color:var(--red);border-color:var(--red);}
+.att-big-btn.active-noheld{background:var(--gray-light);color:var(--gray);border-color:var(--gray);}
 
-@media (max-width: 600px) {
-  .modal-box { border-radius: 14px; max-width: 95vw; }
-  .modal-header { padding: 10px 12px; }
-  .modal-title { font-size: 12px; }
-  .modal-close { width: 26px; height: 26px; font-size: 11px; }
-  .modal-img { max-height: 250px; }
-  .modal-meta { padding: 10px 12px; }
-  .meta-chip { font-size: 9px; padding: 3px 6px; }
-}
+/* GPS in sheet */
+.sheet-gps{margin:0 16px 12px;padding:10px 12px;background:var(--bg);border:1px dashed var(--border);border-radius:10px;}
+.sheet-gps.has-photo{border-style:solid;border-color:rgba(79,70,229,0.3);background:var(--accent-light);}
+.gps-upload-row{display:flex;align-items:center;gap:8px;}
+.gps-label{font-size:10px;font-weight:800;color:var(--muted);flex:1;}
+.gps-opt-tag{font-size:9px;color:var(--gray);border:1px solid var(--border);border-radius:4px;padding:1px 5px;background:var(--surface);}
+.gps-upload-btn{padding:5px 12px;border-radius:6px;font-size:11px;font-weight:800;border:1.5px solid var(--border);cursor:pointer;background:var(--surface);color:var(--muted);white-space:nowrap;font-family:inherit;}
+.gps-upload-btn.has-photos{border-color:var(--green);color:var(--green);background:var(--green-light);}
+.gps-preview{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;}
+.gps-thumb-wrap{position:relative;width:54px;height:54px;border-radius:8px;overflow:hidden;border:1.5px solid var(--accent);cursor:pointer;flex-shrink:0;}
+.gps-thumb{width:100%;height:100%;object-fit:cover;display:block;}
+.gps-thumb-del{position:absolute;top:2px;right:2px;width:16px;height:16px;border-radius:50%;background:rgba(0,0,0,0.6);color:#fff;font-size:9px;display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;}
+.gps-meta{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);margin-top:5px;}
+.gps-meta .coord{color:var(--accent);font-weight:600;}
+.gps-meta .no-coord{color:var(--yellow);}
 
-@media (max-width: 480px) {
-  .modal-overlay { padding: 16px; }
-  .modal-box { border-radius: 12px; }
-  .modal-header { padding: 8px 10px; }
-  .modal-title { font-size: 11px; }
-  .modal-close { width: 24px; height: 24px; font-size: 10px; }
-  .modal-img { max-height: 200px; }
-  .modal-meta { padding: 8px 10px; }
-  .modal-meta-row { gap: 4px; }
-  .meta-chip { font-size: 8px; padding: 2px 5px; border-radius: 4px; gap: 3px; }
-}
+/* PHOTO MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:1000;align-items:center;justify-content:center;padding:16px;}
+.modal-overlay.open{display:flex;}
+.modal-box{background:var(--surface);border-radius:16px;overflow:hidden;max-width:500px;width:100%;}
+.modal-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--border);}
+.modal-title{font-size:14px;font-weight:900;}
+.modal-close{background:none;border:1px solid var(--border);width:28px;height:28px;border-radius:7px;cursor:pointer;font-size:14px;color:var(--muted);}
+.modal-img{width:100%;max-height:350px;object-fit:contain;background:#000;display:block;}
+.modal-meta{padding:12px 16px;background:var(--bg);}
+.modal-meta-row{display:flex;gap:6px;flex-wrap:wrap;}
+.meta-chip{font-family:'JetBrains Mono',monospace;font-size:10px;padding:4px 8px;border-radius:6px;border:1px solid var(--border);background:var(--surface);display:flex;align-items:center;gap:4px;text-decoration:none;color:var(--text);}
+.meta-chip.coord-chip{border-color:var(--accent);color:var(--accent);background:var(--accent-light);}
+.meta-chip.warn-chip{border-color:var(--yellow);color:var(--yellow);background:var(--yellow-light);}
 
-/* Auth Mobile Styles */
-@media (max-width: 768px) {
-  .auth-container { padding: 30px; border-radius: 20px; }
-  .auth-logo { margin-bottom: 24px; }
-  .auth-logo-icon { width: 44px; height: 44px; font-size: 24px; }
-  .auth-logo-text { font-size: 22px; }
-  .auth-tabs { margin-bottom: 18px; }
-  .auth-tab { padding: 9px; font-size: 11px; border-radius: 8px; }
-  .form-group { margin-bottom: 10px; }
-  .form-label { font-size: 11px; margin-bottom: 5px; }
-  .form-input { padding: 9px 12px; font-size: 13px; border-radius: 8px; }
-  .form-btn { padding: 10px; font-size: 12px; border-radius: 8px; }
-  .form-text { font-size: 11px; margin-top: 10px; }
-}
-
-@media (max-width: 600px) {
-  .auth-container { padding: 24px; border-radius: 18px; margin: 16px; }
-  .auth-logo { margin-bottom: 20px; }
-  .auth-logo-icon { width: 40px; height: 40px; font-size: 20px; }
-  .auth-logo-text { font-size: 20px; }
-  .auth-tabs { margin-bottom: 16px; gap: 4px; }
-  .auth-tab { padding: 8px; font-size: 10px; border-radius: 8px; }
-  .form-group { margin-bottom: 9px; }
-  .form-label { font-size: 10px; margin-bottom: 4px; }
-  .form-input { padding: 8px 10px; font-size: 12px; border-radius: 8px; }
-  .form-btn { padding: 9px; font-size: 11px; border-radius: 8px; }
-  .form-error { font-size: 11px; }
-  .form-text { font-size: 10px; margin-top: 9px; }
-  .spinner { width: 10px; height: 10px; border: 1.5px solid var(--accent-light); margin-right: 5px; }
-}
-
-@media (max-width: 480px) {
-  .auth-page { padding: 12px; }
-  .auth-container { padding: 20px; border-radius: 16px; margin: 0; max-width: 100%; }
-  .auth-logo { margin-bottom: 18px; gap: 10px; }
-  .auth-logo-icon { width: 36px; height: 36px; font-size: 18px; }
-  .auth-logo-text { font-size: 18px; }
-  .auth-tabs { margin-bottom: 14px; }
-  .auth-tab { padding: 7px; font-size: 9px; border-radius: 6px; }
-  .form-group { margin-bottom: 8px; }
-  .form-label { font-size: 9px; margin-bottom: 3px; }
-  .form-input { padding: 7px 9px; font-size: 12px; border-radius: 6px; }
-  .form-btn { padding: 8px; font-size: 10px; border-radius: 6px; }
-  .form-error { font-size: 10px; margin-top: 2px; }
-  .form-text { font-size: 9px; margin-top: 8px; line-height: 1.4; }
-  .spinner { width: 9px; height: 9px; border: 1px solid var(--accent-light); margin-right: 4px; }
-}
-
-@media (max-width: 500px) { .subj-name { font-size: 12px; } .pct-badge { font-size: 15px; } }
-
-/* Install Button */
-.install-btn { position: fixed; bottom: 20px; right: 20px; background: var(--accent); color: #fff; border: none; padding: 12px 16px; border-radius: 12px; font-weight: 700; font-size: 13px; cursor: pointer; box-shadow: 0 8px 24px rgba(79,70,229,0.4); display: flex; align-items: center; gap: 8px; z-index: 999; transition: all 0.3s ease; font-family: inherit; text-transform: uppercase; letter-spacing: 0.5px; }
-.install-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(79,70,229,0.5); }
-.install-btn:active { transform: translateY(0); }
-@media (max-width: 768px) { .install-btn { bottom: 100px; right: 16px; padding: 10px 14px; font-size: 12px; border-radius: 10px; } }
-@media (max-width: 600px) { .install-btn { bottom: 80px; right: 12px; padding: 9px 12px; font-size: 11px; border-radius: 8px; } }
-@media (max-width: 480px) { .install-btn { bottom: 70px; right: 10px; padding: 8px 10px; font-size: 10px; border-radius: 6px; gap: 6px; } }
+/* INSTALL BUTTON */
+.install-btn{position:fixed;bottom:16px;right:16px;background:var(--accent);color:#fff;border:none;padding:12px 16px;border-radius:12px;font-weight:700;font-size:13px;cursor:pointer;box-shadow:0 4px 20px rgba(79,70,229,0.4);display:none;align-items:center;gap:8px;z-index:300;font-family:inherit;}
 </style>
 </head>
 <body>
 
 <!-- AUTH PAGE -->
 <div class="auth-page" id="authPage">
-  <div class="auth-container">
+  <div class="auth-box">
     <div class="auth-logo">
       <div class="auth-logo-icon">📚</div>
       <div class="auth-logo-text">Attend<span>Ease</span></div>
     </div>
-    
     <div class="auth-tabs">
       <div class="auth-tab active" onclick="switchAuthTab('login')">Sign In</div>
       <div class="auth-tab" onclick="switchAuthTab('signup')">Sign Up</div>
     </div>
-
-    <!-- Login Tab -->
     <div class="auth-tab-content active" id="loginTab">
-      <div class="auth-form">
-        <div class="form-group">
-          <label class="form-label">Email</label>
-          <input class="form-input" id="loginEmail" type="email" placeholder="you@college.edu" autofocus>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Password</label>
-          <input class="form-input" id="loginPassword" type="password" placeholder="••••••••">
-        </div>
-        <button class="form-btn primary" onclick="handleLogin()">Sign In</button>
-        <div class="auth-loading" id="loginLoading"><span class="spinner"></span>Signing in...</div>
-        <div class="form-error" id="loginError"></div>
-      </div>
+      <div class="form-group"><label class="form-label">Email</label><input class="form-input" id="loginEmail" type="email" placeholder="you@college.edu"></div>
+      <div class="form-group"><label class="form-label">Password</label><input class="form-input" id="loginPassword" type="password" placeholder="••••••••"></div>
+      <button class="form-btn" onclick="handleLogin()">Sign In</button>
+      <div class="spinner-wrap" id="loginLoading"><span class="spinner"></span>Signing in...</div>
+      <div class="form-error" id="loginError"></div>
     </div>
-
-    <!-- Signup Tab -->
     <div class="auth-tab-content" id="signupTab">
-      <div class="auth-form">
-        <div class="form-group">
-          <label class="form-label">Full Name</label>
-          <input class="form-input" id="signupName" type="text" placeholder="Your Name">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Email</label>
-          <input class="form-input" id="signupEmail" type="email" placeholder="you@college.edu">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Password</label>
-          <input class="form-input" id="signupPassword" type="password" placeholder="••••••••">
-        </div>
-        <button class="form-btn primary" onclick="handleSignup()">Create Account</button>
-        <div class="auth-loading" id="signupLoading"><span class="spinner"></span>Creating account...</div>
-        <div class="form-error" id="signupError"></div>
-      </div>
+      <div class="form-group"><label class="form-label">Full Name</label><input class="form-input" id="signupName" type="text" placeholder="Your Name"></div>
+      <div class="form-group"><label class="form-label">Email</label><input class="form-input" id="signupEmail" type="email" placeholder="you@college.edu"></div>
+      <div class="form-group"><label class="form-label">Password</label><input class="form-input" id="signupPassword" type="password" placeholder="••••••••"></div>
+      <button class="form-btn" onclick="handleSignup()">Create Account</button>
+      <div class="spinner-wrap" id="signupLoading"><span class="spinner"></span>Creating account...</div>
+      <div class="form-error" id="signupError"></div>
     </div>
-
-    <div class="form-text">
-      💡 Demo: Use email <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e296879196a296879196cc818d8f">[email&#160;protected]</a></strong> / password <strong>test123</strong>
-    </div>
+    <div class="form-text">💡 Demo: <strong>test@test.com</strong> / <strong>test123</strong></div>
   </div>
 </div>
 
 <!-- MAIN APP -->
-<div class="app" id="mainApp" style="display:none;">
+<div class="app" id="mainApp">
   <div class="header">
     <div class="logo">
       <div class="logo-icon">📚</div>
       <div class="logo-text">Attend<span>Ease</span></div>
     </div>
-    <div class="header-right">
-      <div class="header-meta" id="todayLabel">Loading...</div>
-      <div class="user-info">
-        <span id="userEmail">—</span>
-        <button class="logout-btn" onclick="handleLogout()">Logout</button>
-      </div>
+    <div class="header-actions">
+      <div class="user-chip" id="userEmail">—</div>
+      <button class="btn-sm btn-logout" onclick="handleLogout()">Logout</button>
     </div>
   </div>
 
-  <div class="stats-bar">
-    <div class="stat-card"><div class="stat-label">Overall Attendance</div><div class="stat-value accent" id="overallPct">—</div><div class="stat-sub">across all subjects</div></div>
-    <div class="stat-card"><div class="stat-label">Classes Attended</div><div class="stat-value green" id="totalPresent">0</div><div class="stat-sub">out of <span id="totalConducted">0</span> conducted</div></div>
-    <div class="stat-card"><div class="stat-label">At Risk Subjects</div><div class="stat-value red" id="atRiskCount">0</div><div class="stat-sub">below 75%</div></div>
-    <div class="stat-card"><div class="stat-label">Required Target</div><div class="stat-value" style="color:var(--accent)">75%</div><div class="stat-sub">minimum attendance</div></div>
+  <div class="stats-grid">
+    <div class="stat-card"><div class="stat-label">Overall</div><div class="stat-value accent" id="overallPct">—</div><div class="stat-sub">attendance</div></div>
+    <div class="stat-card"><div class="stat-label">Attended</div><div class="stat-value green" id="totalPresent">0</div><div class="stat-sub">of <span id="totalConducted">0</span> classes</div></div>
+    <div class="stat-card"><div class="stat-label">At Risk</div><div class="stat-value red" id="atRiskCount">0</div><div class="stat-sub">below 75%</div></div>
+    <div class="stat-card"><div class="stat-label">Target</div><div class="stat-value accent">75%</div><div class="stat-sub">minimum</div></div>
   </div>
 
   <div id="alertsArea"></div>
 
-  <div class="main-grid">
+  <div class="date-bar">
     <div>
-      <div class="section-title">📋 All Subjects — Click to mark attendance</div>
-      <div class="subject-list" id="subjectList"></div>
+      <div class="date-label" id="dateLabel">Today</div>
+      <div class="date-sub">Tap subject → mark attendance</div>
     </div>
-    <div class="right-panel">
-      <div class="calendar-card">
-        <div class="cal-header">
-          <div class="cal-month" id="calMonthTitle"></div>
-          <div class="cal-nav">
-            <button class="cal-btn" onclick="changeMonth(-1)">‹</button>
-            <button class="cal-btn" onclick="changeMonth(1)">›</button>
-          </div>
-        </div>
-        <div class="cal-days-header">
-          <div class="cal-day-name">Su</div><div class="cal-day-name">Mo</div><div class="cal-day-name">Tu</div>
-          <div class="cal-day-name">We</div><div class="cal-day-name">Th</div><div class="cal-day-name">Fr</div><div class="cal-day-name">Sa</div>
-        </div>
-        <div class="cal-grid" id="calGrid"></div>
-        <div class="legend">
-          <div class="legend-item"><div class="legend-dot" style="background:var(--green)"></div>Present</div>
-          <div class="legend-item"><div class="legend-dot" style="background:var(--red)"></div>Absent</div>
-          <div class="legend-item"><div class="legend-dot" style="background:var(--gray)"></div>Not Held</div>
-          <div class="legend-item"><div class="legend-dot" style="background:var(--accent)"></div>Today</div>
-        </div>
-      </div>
-      <div class="day-panel">
-        <div class="day-panel-title" id="dayPanelTitle">Select a date</div>
-        <div class="day-panel-sub" id="dayPanelSub">Click any date on the calendar</div>
-        <div id="daySubjectList"></div>
+    <div class="date-nav">
+      <button class="date-nav-btn" onclick="changeDate(-1)">‹</button>
+      <button class="date-nav-btn" onclick="goToday()" title="Today">●</button>
+      <button class="date-nav-btn" onclick="changeDate(1)">›</button>
+    </div>
+  </div>
+
+  <div class="section-label">📋 All Subjects</div>
+  <div class="subject-list" id="subjectList"></div>
+</div>
+
+<!-- BOTTOM SHEET OVERLAY -->
+<div class="sheet-overlay" id="sheetOverlay" onclick="closeSheet()"></div>
+
+<!-- BOTTOM SHEET -->
+<div class="bottom-sheet" id="bottomSheet">
+  <div class="sheet-handle"></div>
+  <div class="sheet-header">
+    <div class="sheet-title-row">
+      <div class="sheet-dot" id="sheetDot"></div>
+      <div>
+        <div class="sheet-subj-name" id="sheetName">—</div>
+        <div class="sheet-subj-code" id="sheetCode">—</div>
       </div>
     </div>
+    <div class="sheet-stats-row">
+      <div class="sheet-stat"><div class="sheet-stat-val accent" id="sheetPct">—</div><div class="sheet-stat-lbl">Attend%</div></div>
+      <div class="sheet-stat"><div class="sheet-stat-val green"  id="sheetPresent">0</div><div class="sheet-stat-lbl">Present</div></div>
+      <div class="sheet-stat"><div class="sheet-stat-val red"    id="sheetAbsent">0</div><div class="sheet-stat-lbl">Absent</div></div>
+      <div class="sheet-stat"><div class="sheet-stat-val gray"   id="sheetTotal">0</div><div class="sheet-stat-lbl">Total</div></div>
+    </div>
+  </div>
+
+  <!-- BIG BUTTONS -->
+  <div class="sheet-btns">
+    <button class="att-big-btn" id="btnPresent" onclick="sheetMark('present')">
+      <span class="btn-icon">✅</span>Present
+    </button>
+    <button class="att-big-btn" id="btnAbsent" onclick="sheetMark('absent')">
+      <span class="btn-icon">❌</span>Absent
+    </button>
+    <button class="att-big-btn" id="btnNoheld" onclick="sheetMark('noheld')">
+      <span class="btn-icon">➖</span>Not Held
+    </button>
+  </div>
+
+  <!-- GPS PHOTO -->
+  <div class="sheet-gps" id="sheetGps">
+    <div class="gps-upload-row">
+      <div class="gps-label">📍 GPS Photo <span class="gps-opt-tag">OPTIONAL</span></div>
+      <input type="file" accept="image/*" style="display:none" id="sheetFileInput" onchange="handleSheetPhoto(this)">
+      <button class="gps-upload-btn" id="sheetUploadBtn" onclick="document.getElementById('sheetFileInput').click()">📷 Upload</button>
+    </div>
+    <div class="gps-preview" id="sheetPhotoPreview"></div>
   </div>
 </div>
 
-<!-- Photo Modal -->
+<!-- PHOTO MODAL -->
 <div class="modal-overlay" id="photoModal">
   <div class="modal-box">
     <div class="modal-header">
-      <div class="modal-title" id="modalTitle">📸 Attendance Proof</div>
+      <div class="modal-title" id="modalTitle">📸 Proof</div>
       <button class="modal-close" onclick="closeModal()">✕</button>
     </div>
     <img class="modal-img" id="modalImg" src="" alt="proof">
@@ -596,330 +310,296 @@ body::before { content: ''; position: fixed; top: -200px; right: -200px; width: 
   </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// ============ FIREBASE SETUP ============
-// Replace these with your Firebase config from https://console.firebase.google.com/
-const firebaseConfig = {
-  apiKey: "AIzaSyDkrVQF_Aq4EY5zHQpJ7nU2mK8xL9mN4Op",
-  authDomain: "attendease-tracker.firebaseapp.com",
-  databaseURL: "https://attendease-tracker-default-rtdb.firebaseio.com",
-  projectId: "attendease-tracker",
-  storageBucket: "attendease-tracker.appspot.com",
-  messagingSenderId: "123456789",
-  appId: "1:123456789:web:abcdef1234567890"
-};
+<button class="install-btn" id="installBtn">⬇️ Install App</button>
 
-// For demo/local testing, use localStorage when Firebase fails
-let useLocalStorage = true;
-let firebaseInitialized = false;
-let auth, database, currentUser = null;
+<script>
+// ── FIREBASE ──
+const firebaseConfig={apiKey:"AIzaSyDkrVQF_Aq4EY5zHQpJ7nU2mK8xL9mN4Op",authDomain:"attendease-tracker.firebaseapp.com",databaseURL:"https://attendease-tracker-default-rtdb.firebaseio.com",projectId:"attendease-tracker",storageBucket:"attendease-tracker.appspot.com",messagingSenderId:"123456789",appId:"1:123456789:web:abcdef1234567890"};
+let useLocal=true,firebaseOK=false,auth,database,currentUser=null;
+try{firebase.initializeApp(firebaseConfig);auth=firebase.auth();database=firebase.database();firebaseOK=true;useLocal=false;}catch(e){}
 
-try {
-  firebase.initializeApp(firebaseConfig);
-  auth = firebase.auth();
-  database = firebase.database();
-  firebaseInitialized = true;
-  useLocalStorage = false;
-} catch (e) {
-  console.warn("Firebase not configured. Using local storage.");
-}
-
-// ============ AUTH FUNCTIONS ============
-function switchAuthTab(tab) {
-  document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.auth-tab-content').forEach(t => t.classList.remove('active'));
+// ── AUTH ──
+function switchAuthTab(tab){
+  document.querySelectorAll('.auth-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.auth-tab-content').forEach(t=>t.classList.remove('active'));
   event.target.classList.add('active');
-  document.getElementById(tab + 'Tab').classList.add('active');
-  document.getElementById(tab + 'Error').textContent = '';
+  document.getElementById(tab+'Tab').classList.add('active');
+  document.getElementById(tab+'Error').textContent='';
 }
-
-async function handleLogin() {
-  const email = document.getElementById('loginEmail').value.trim();
-  const password = document.getElementById('loginPassword').value;
-  const errorEl = document.getElementById('loginError');
-  const loadingEl = document.getElementById('loginLoading');
-  
-  if (!email || !password) {
-    errorEl.textContent = 'Please fill in all fields';
-    return;
-  }
-  
-  errorEl.textContent = '';
-  loadingEl.style.display = 'block';
-  
-  try {
-    if (firebaseInitialized) {
-      await auth.signInWithEmailAndPassword(email, password);
-    } else {
-      // Demo mode - check against stored users
-      const storedUsers = JSON.parse(localStorage.getItem('attendease_all_users') || '{}');
-      if (email in storedUsers && storedUsers[email] === password) {
-        currentUser = { uid: 'user-' + email.replace(/[^a-z0-9]/g, ''), email: email, displayName: email.split('@')[0] };
-        localStorage.setItem('attendease_current_user', JSON.stringify(currentUser));
-        loadAppData();
-        showApp();
-      } else {
-        throw new Error('Invalid email or password');
-      }
+async function handleLogin(){
+  const email=document.getElementById('loginEmail').value.trim();
+  const pass=document.getElementById('loginPassword').value;
+  const err=document.getElementById('loginError');
+  const load=document.getElementById('loginLoading');
+  if(!email||!pass){err.textContent='Please fill all fields';return;}
+  err.textContent='';load.style.display='block';
+  try{
+    if(firebaseOK){await auth.signInWithEmailAndPassword(email,pass);}
+    else{
+      const users=JSON.parse(localStorage.getItem('ae_users')||'{}');
+      if(users[email]===pass){currentUser={uid:'u_'+email.replace(/\W/g,''),email,displayName:email.split('@')[0]};localStorage.setItem('ae_user',JSON.stringify(currentUser));loadData();showApp();}
+      else throw new Error('Invalid email or password');
     }
-  } catch (error) {
-    errorEl.textContent = error.message.replace('Firebase: ', '');
-    loadingEl.style.display = 'none';
-  }
+  }catch(e){err.textContent=e.message.replace('Firebase: ','');load.style.display='none';}
 }
-
-async function handleSignup() {
-  const name = document.getElementById('signupName').value.trim();
-  const email = document.getElementById('signupEmail').value.trim();
-  const password = document.getElementById('signupPassword').value;
-  const errorEl = document.getElementById('signupError');
-  const loadingEl = document.getElementById('signupLoading');
-  
-  if (!name || !email || !password) {
-    errorEl.textContent = 'Please fill in all fields';
-    return;
-  }
-  
-  if (password.length < 6) {
-    errorEl.textContent = 'Password must be at least 6 characters';
-    return;
-  }
-  
-  errorEl.textContent = '';
-  loadingEl.style.display = 'block';
-  
-  try {
-    if (firebaseInitialized) {
-      const result = await auth.createUserWithEmailAndPassword(email, password);
-      await result.user.updateProfile({ displayName: name });
-    } else {
-      // Demo mode - save new user
-      const storedUsers = JSON.parse(localStorage.getItem('attendease_all_users') || '{}');
-      if (email in storedUsers) {
-        throw new Error('Email already registered');
-      }
-      storedUsers[email] = password;
-      localStorage.setItem('attendease_all_users', JSON.stringify(storedUsers));
-      
-      // Auto login after signup
-      currentUser = { uid: 'user-' + email.replace(/[^a-z0-9]/g, ''), email: email, displayName: name };
-      localStorage.setItem('attendease_current_user', JSON.stringify(currentUser));
-      loadAppData();
-      showApp();
+async function handleSignup(){
+  const name=document.getElementById('signupName').value.trim();
+  const email=document.getElementById('signupEmail').value.trim();
+  const pass=document.getElementById('signupPassword').value;
+  const err=document.getElementById('signupError');
+  const load=document.getElementById('signupLoading');
+  if(!name||!email||!pass){err.textContent='Please fill all fields';return;}
+  if(pass.length<6){err.textContent='Password needs 6+ characters';return;}
+  err.textContent='';load.style.display='block';
+  try{
+    if(firebaseOK){const r=await auth.createUserWithEmailAndPassword(email,pass);await r.user.updateProfile({displayName:name});}
+    else{
+      const users=JSON.parse(localStorage.getItem('ae_users')||'{}');
+      if(users[email])throw new Error('Email already registered');
+      users[email]=pass;localStorage.setItem('ae_users',JSON.stringify(users));
+      currentUser={uid:'u_'+email.replace(/\W/g,''),email,displayName:name};
+      localStorage.setItem('ae_user',JSON.stringify(currentUser));loadData();showApp();
     }
-  } catch (error) {
-    errorEl.textContent = error.message.replace('Firebase: ', '');
-    loadingEl.style.display = 'none';
-  }
+  }catch(e){err.textContent=e.message.replace('Firebase: ','');load.style.display='none';}
 }
-
-async function handleLogout() {
-  try {
-    if (firebaseInitialized) {
-      await auth.signOut();
-    } else {
-      localStorage.removeItem('attendease_current_user');
-    }
-    currentUser = null;
-    document.getElementById('loginEmail').value = '';
-    document.getElementById('loginPassword').value = '';
-    showAuth();
-  } catch (error) {
-    alert('Logout failed: ' + error.message);
-  }
+async function handleLogout(){
+  if(firebaseOK)await auth.signOut();else localStorage.removeItem('ae_user');
+  currentUser=null;
+  document.getElementById('loginEmail').value='';
+  document.getElementById('loginPassword').value='';
+  showAuth();
 }
-
-function showApp() {
+function showApp(){
   document.getElementById('authPage').classList.add('hidden');
-  document.getElementById('mainApp').style.display = 'block';
-  document.getElementById('userEmail').textContent = currentUser.email;
-  loadAppData();
-  init();
+  document.getElementById('mainApp').style.display='block';
+  document.getElementById('userEmail').textContent=currentUser.email;
+  loadData();init();
 }
-
-function showAuth() {
+function showAuth(){
   document.getElementById('authPage').classList.remove('hidden');
-  document.getElementById('mainApp').style.display = 'none';
+  document.getElementById('mainApp').style.display='none';
 }
 
-// ============ APP DATA (FIREBASE OR LOCAL) ============
-const SUBJECTS = [
-  { id:'s1',  code:'AI & AGRI',  name:'Agricultural Informatics and Artificial Intelligence',       color:'#6366f1' },
-  { id:'s2',  code:'HRT 221',    name:'Production Technology of Vegetables and Spices',              color:'#10b981' },
-  { id:'s3',  code:'AEC 221',    name:'Principles of Agricultural Economics and Farm Management',    color:'#f59e0b' },
-  { id:'s4',  code:'AGR 221',    name:'Crop Production Technology-II (Rabi Crops)',                  color:'#ef4444' },
-  { id:'s5',  code:'AEG 221',    name:'Farm Machinery and Power',                                    color:'#8b5cf6' },
-  { id:'s6',  code:'AGE 222',    name:'Water Management',                                            color:'#06b6d4' },
-  { id:'s7',  code:'SOILS 221',  name:'Problematic Soils and their Management',                      color:'#d97706' },
-  { id:'s8',  code:'GPB 221',    name:'Basics of Plant Breeding',                                    color:'#059669' },
-  { id:'s9',  code:'SEC-V',      name:'Skill Enhancement Course-VI',                                 color:'#db2777' },
-  { id:'s10', code:'ENG 221',    name:'PEARL I – Foundation of English Communication',               color:'#0ea5e9' }
+// ── DATA ──
+const SUBJECTS=[
+  {id:'s1',code:'AI & AGRI',name:'Agricultural Informatics and Artificial Intelligence',color:'#6366f1'},
+  {id:'s2',code:'HRT 221',name:'Production Technology of Vegetables and Spices',color:'#10b981'},
+  {id:'s3',code:'AEC 221',name:'Principles of Agricultural Economics and Farm Management',color:'#f59e0b'},
+  {id:'s4',code:'AGR 221',name:'Crop Production Technology-II (Rabi Crops)',color:'#ef4444'},
+  {id:'s5',code:'AEG 221',name:'Farm Machinery and Power',color:'#8b5cf6'},
+  {id:'s6',code:'AGE 222',name:'Water Management',color:'#06b6d4'},
+  {id:'s7',code:'SOILS 221',name:'Problematic Soils and their Management',color:'#d97706'},
+  {id:'s8',code:'GPB 221',name:'Basics of Plant Breeding',color:'#059669'},
+  {id:'s9',code:'SEC-V',name:'Skill Enhancement Course-VI',color:'#db2777'},
+  {id:'s10',code:'ENG 221',name:'PEARL I – Foundation of English Communication',color:'#0ea5e9'}
 ];
+let attendance={},photos={};
+function pfx(){return currentUser?currentUser.uid+'_':'';}
+function loadData(){
+  try{const r=localStorage.getItem(pfx()+'ae_att');attendance=r?JSON.parse(r):{};}catch(e){attendance={};}
+  try{const r=localStorage.getItem(pfx()+'ae_photos');photos=r?JSON.parse(r):{};}catch(e){photos={};}
+}
+function saveAtt(){
+  localStorage.setItem(pfx()+'ae_att',JSON.stringify(attendance));
+  if(firebaseOK&&currentUser)database.ref('users/'+currentUser.uid+'/attendance').set(attendance).catch(()=>{});
+}
+function savePhotos(){
+  try{localStorage.setItem(pfx()+'ae_photos',JSON.stringify(photos));}catch(e){alert('Storage full! Delete some photos.');}
+  if(firebaseOK&&currentUser)database.ref('users/'+currentUser.uid+'/photos').set(photos).catch(()=>{});
+}
+function pKey(dk,sId){return dk+'_'+sId;}
 
-let attendance = {};
-let photos = {};
-let currentYear, currentMonth, selectedDate = null;
-
-function getStoragePrefix() {
-  return currentUser ? currentUser.uid + '_' : '';
+// ── DATE ──
+let selectedDate='';
+function dateKey(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+function todayKey(){return dateKey(new Date());}
+function changeDate(dir){const d=new Date(selectedDate+'T12:00:00');d.setDate(d.getDate()+dir);selectedDate=dateKey(d);updateDateBar();renderSubjectList();}
+function goToday(){selectedDate=todayKey();updateDateBar();renderSubjectList();}
+function updateDateBar(){
+  const d=new Date(selectedDate+'T12:00:00');
+  const days=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const isToday=selectedDate===todayKey();
+  document.getElementById('dateLabel').textContent=(isToday?'Today':'')+(isToday?' — ':' ')+days[d.getDay()]+', '+d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear();
 }
 
-function loadAppData() {
-  if (useLocalStorage) {
-    try { const r = localStorage.getItem(getStoragePrefix() + 'attendease_v3'); if(r) attendance = JSON.parse(r); } catch(e) { attendance={}; }
-    try { const r = localStorage.getItem(getStoragePrefix() + 'attendease_photos_v3'); if(r) photos = JSON.parse(r); } catch(e) { photos={}; }
-  }
-}
-
-function saveData() {
-  if (useLocalStorage) {
-    try { localStorage.setItem(getStoragePrefix() + 'attendease_v3', JSON.stringify(attendance)); } catch(e){}
-  } else if (firebaseInitialized && currentUser) {
-    database.ref('users/' + currentUser.uid + '/attendance').set(attendance).catch(e => console.error('Save failed:', e));
-  }
-}
-
-function savePhotos() {
-  if (useLocalStorage) {
-    try { localStorage.setItem(getStoragePrefix() + 'attendease_photos_v3', JSON.stringify(photos)); } catch(e){ alert('Storage full! Delete some photos.'); }
-  } else if (firebaseInitialized && currentUser) {
-    database.ref('users/' + currentUser.uid + '/photos').set(photos).catch(e => console.error('Photo save failed:', e));
-  }
-}
-
-// ============ REST OF THE APP (SAME AS BEFORE) ============
-function pKey(dk, sId) { return dk+'_'+sId; }
-function dateKey(y,m,d){ return `${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`; }
-function getToday()    { const n=new Date(); return {y:n.getFullYear(),m:n.getMonth(),d:n.getDate()}; }
-
-function getStats(sId) {
+// ── STATS ──
+function getStats(sId){
   let present=0,absent=0,conducted=0;
-  Object.values(attendance).forEach(dd => {
+  Object.values(attendance).forEach(dd=>{
     if(dd[sId]==='present'){present++;conducted++;}
     else if(dd[sId]==='absent'){absent++;conducted++;}
   });
-  return { present, absent, conducted, pct: conducted>0 ? Math.round(present/conducted*100) : null };
+  return{present,absent,conducted,pct:conducted>0?Math.round(present/conducted*100):null};
 }
-function pctCls(p){ if(p===null)return'na'; if(p>=75)return'safe'; if(p>=60)return'warn'; return'danger'; }
-function fillCls(p){ if(p===null)return''; if(p>=75)return'fill-safe'; if(p>=60)return'fill-warn'; return'fill-danger'; }
+function pctClass(p){if(p===null)return'na';if(p>=75)return'safe';if(p>=60)return'warn';return'danger';}
 function bunkInfo(present,conducted,pct){
-  if(!conducted)return'';
-  if(pct>=75){ const c=Math.floor((4*present-3*conducted)/3); return c>0?`Can skip ${c} more`:'At limit!'; }
-  return `Attend ${Math.ceil(3*conducted-4*present)} more`;
+  if(!conducted)return'No data yet';
+  if(pct>=75){const c=Math.floor((4*present-3*conducted)/3);return c>0?'Skip '+c+' more':'At limit!';}
+  return'Need '+Math.ceil(3*conducted-4*present)+' more';
 }
 
+// ── RENDER SUBJECTS ──
 function renderSubjectList(){
-  const container=document.getElementById('subjectList'); container.innerHTML='';
+  const el=document.getElementById('subjectList');el.innerHTML='';
   let tp=0,tc=0,risk=0;
   SUBJECTS.forEach(s=>{
-    const {present,absent,conducted,pct}=getStats(s.id);
-    tp+=present; tc+=conducted; if(pct!==null&&pct<75)risk++;
-    const pc=pctCls(pct),fc=fillCls(pct),bi=pct!==null?bunkInfo(present,conducted,pct):'No data yet',fw=pct!==null?Math.min(pct,100):0;
-    const card=document.createElement('div'); card.className='subject-card';
+    const{present,absent,conducted,pct}=getStats(s.id);
+    tp+=present;tc+=conducted;if(pct!==null&&pct<75)risk++;
+    const pc=pctClass(pct);
+    const todayStatus=(attendance[selectedDate]||{})[s.id]||null;
+    const card=document.createElement('div');
+    card.className='subj-card'+(todayStatus?' marked-'+todayStatus:'');
+    card.onclick=()=>openSheet(s.id);
     card.innerHTML=`
-      <div class="subj-top-row">
-        <div class="subj-color" style="background:${s.color}"></div>
-        <div class="subj-info">
-          <div class="subj-code">${s.code}</div>
-          <div class="subj-name" title="${s.name}">${s.name}</div>
-        </div>
-        <div class="pct-badge ${pc}">${pct!==null?pct+'%':'—'}</div>
+      <div class="subj-strip" style="background:${s.color}"></div>
+      <div class="subj-body">
+        <div class="subj-code-line">${s.code}</div>
+        <div class="subj-name-line">${s.name}</div>
+        <div class="subj-stat-line">${present}P · ${absent}A · ${conducted} conducted · ${bunkInfo(present,conducted,pct)}</div>
       </div>
-      <div class="subj-bottom-row">
-        <div class="subj-stats">${present}P / ${absent}A / ${conducted} total · ${bi}</div>
-        <div class="mini-bar-track"><div class="mini-bar-fill ${fc}" style="width:${fw}%"></div></div>
+      <div class="subj-right">
+        <div class="pct ${pc}">${pct!==null?pct+'%':'—'}</div>
+        <div class="status-dot ${todayStatus||''}"></div>
       </div>`;
-    container.appendChild(card);
+    el.appendChild(card);
   });
   const op=tc>0?Math.round(tp/tc*100):null;
   document.getElementById('overallPct').textContent=op!==null?op+'%':'—';
   document.getElementById('totalPresent').textContent=tp;
   document.getElementById('totalConducted').textContent=tc;
   document.getElementById('atRiskCount').textContent=risk;
-  const alerts=document.getElementById('alertsArea'); alerts.innerHTML='';
-  const danger=SUBJECTS.filter(s=>{ const{pct}=getStats(s.id); return pct!==null&&pct<65; });
-  const warn  =SUBJECTS.filter(s=>{ const{pct}=getStats(s.id); return pct!==null&&pct>=65&&pct<75; });
-  if(danger.length) alerts.innerHTML+=`<div class="alert-banner danger">⚠️ Critical: ${danger.map(s=>s.code).join(', ')} — attendance dangerously low!</div>`;
-  if(warn.length)   alerts.innerHTML+=`<div class="alert-banner warn">⚡ Warning: ${warn.map(s=>s.code).join(', ')} — approaching 75% threshold</div>`;
-}
-
-function renderCalendar(){
-  const title=document.getElementById('calMonthTitle'),grid=document.getElementById('calGrid'),today=getToday();
-  const mn=['January','February','March','April','May','June','July','August','September','October','November','December'];
-  title.textContent=`${mn[currentMonth]} ${currentYear}`; grid.innerHTML='';
-  const firstDay=new Date(currentYear,currentMonth,1).getDay(),dim=new Date(currentYear,currentMonth+1,0).getDate(),prev=new Date(currentYear,currentMonth,0).getDate();
-  for(let i=0;i<firstDay;i++){const d=document.createElement('div');d.className='cal-day other-month';d.textContent=prev-firstDay+1+i;grid.appendChild(d);}
-  for(let day=1;day<=dim;day++){
-    const key=dateKey(currentYear,currentMonth,day);
-    const isT=(currentYear===today.y&&currentMonth===today.m&&day===today.d),isSel=selectedDate===key,hasD=attendance[key]&&Object.keys(attendance[key]).length>0;
-    const d=document.createElement('div'); let cls='cal-day';
-    if(isT)cls+=' today'; if(isSel&&!isT)cls+=' selected-day'; if(hasD)cls+=' has-data';
-    d.className=cls; d.textContent=day; d.addEventListener('click',()=>selectDate(key,day));
-    if(hasD){const dd=attendance[key];const p=Object.values(dd).filter(v=>v==='present').length,a=Object.values(dd).filter(v=>v==='absent').length;if(a>0&&p===0)d.style.background=isT?'':'rgba(239,68,68,0.1)';else if(p>0)d.style.background=isT?'':'rgba(16,185,129,0.08)';}
-    grid.appendChild(d);
-  }
-  const total=Math.ceil((firstDay+dim)/7)*7; let nd=1;
-  for(let i=firstDay+dim;i<total;i++){const d=document.createElement('div');d.className='cal-day other-month';d.textContent=nd++;grid.appendChild(d);}
-}
-function changeMonth(dir){ currentMonth+=dir; if(currentMonth>11){currentMonth=0;currentYear++;}if(currentMonth<0){currentMonth=11;currentYear--;} renderCalendar(); }
-function selectDate(key,day){ selectedDate=key; renderCalendar(); renderDayPanel(key,day); }
-
-function renderDayPanel(key,day){
-  const mn=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  const dn=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  const dow=new Date(currentYear,currentMonth,day).getDay();
-  document.getElementById('dayPanelTitle').textContent=`${day} ${mn[currentMonth]}, ${currentYear}`;
-  document.getElementById('dayPanelSub').textContent=dn[dow];
-  const container=document.getElementById('daySubjectList'); container.innerHTML='';
-  if(!attendance[key])attendance[key]={};
-
+  const alertsEl=document.getElementById('alertsArea');alertsEl.innerHTML='';
   SUBJECTS.forEach(s=>{
-    const cur=attendance[key][s.id]||null;
-    const pk=pKey(key,s.id), sp=photos[pk]||[], hasP=sp.length>0;
-    const row=document.createElement('div'); row.className='day-subject-row';
-    row.innerHTML=`
-      <div class="day-row-top">
-        <div class="day-row-header">
-          <div class="day-subj-dot" style="background:${s.color}"></div>
-          <div class="day-subj-name">${s.code} · <span style="font-weight:500;font-size:11px;color:var(--muted)">${s.name.substring(0,32)}${s.name.length>32?'…':''}</span></div>
-        </div>
-        <div class="attendance-btns">
-          <button class="att-btn ${cur==='present'?'active-present':''}" onclick="markAtt('${key}','${s.id}','present')">✓ Present</button>
-          <button class="att-btn ${cur==='absent'?'active-absent':''}"  onclick="markAtt('${key}','${s.id}','absent')">✗ Absent</button>
-          <button class="att-btn ${cur==='noheld'?'active-noheld':''}"  onclick="markAtt('${key}','${s.id}','noheld')">— Not Held</button>
-        </div>
-      </div>
-      <div class="gps-section ${hasP?'has-photo':''}" id="gps_${key}_${s.id}">
-        <div class="gps-upload-row">
-          <div class="gps-label">📍 GPS Photo Proof <span class="gps-opt-tag">OPTIONAL</span></div>
-          <input type="file" accept="image/*" style="display:none" id="inp_${key}_${s.id}" onchange="handlePhoto('${key}','${s.id}',this)">
-          <button class="gps-upload-btn ${hasP?'has-photos':''}" onclick="document.getElementById('inp_${key}_${s.id}').click()">
-            ${hasP?'📷 '+sp.length+' photo'+(sp.length>1?'s':''):'📷 Upload'}
-          </button>
-        </div>
-        <div class="gps-preview" id="prev_${key}_${s.id}"></div>
-      </div>`;
-    container.appendChild(row);
-    if(hasP) renderThumbs(key,s.id);
+    const{pct}=getStats(s.id);
+    if(pct!==null&&pct<65)alertsEl.innerHTML+=`<div class="alert-banner danger">⚠️ ${s.code} — ${pct}% (critical!)</div>`;
+    else if(pct!==null&&pct<75)alertsEl.innerHTML+=`<div class="alert-banner warn">⚡ ${s.code} — ${pct}% (warning)</div>`;
   });
 }
 
+// ── BOTTOM SHEET ──
+let sheetSubjId=null;
+function openSheet(sId){
+  sheetSubjId=sId;
+  const s=SUBJECTS.find(x=>x.id===sId);
+  const{present,absent,conducted,pct}=getStats(sId);
+  const cur=(attendance[selectedDate]||{})[sId]||null;
+  document.getElementById('sheetName').textContent=s.name;
+  document.getElementById('sheetCode').textContent=s.code;
+  document.getElementById('sheetDot').style.background=s.color;
+  document.getElementById('sheetPct').textContent=pct!==null?pct+'%':'—';
+  document.getElementById('sheetPresent').textContent=present;
+  document.getElementById('sheetAbsent').textContent=absent;
+  document.getElementById('sheetTotal').textContent=conducted;
+  updateSheetBtns(cur);
+  renderSheetPhotos();
+  document.getElementById('sheetOverlay').classList.add('open');
+  document.getElementById('bottomSheet').classList.add('open');
+}
+function closeSheet(){
+  document.getElementById('sheetOverlay').classList.remove('open');
+  document.getElementById('bottomSheet').classList.remove('open');
+  sheetSubjId=null;
+}
+function updateSheetBtns(cur){
+  document.getElementById('btnPresent').className='att-big-btn'+(cur==='present'?' active-present':'');
+  document.getElementById('btnAbsent').className='att-big-btn'+(cur==='absent'?' active-absent':'');
+  document.getElementById('btnNoheld').className='att-big-btn'+(cur==='noheld'?' active-noheld':'');
+}
+function sheetMark(status){
+  if(!sheetSubjId)return;
+  if(!attendance[selectedDate])attendance[selectedDate]={};
+  if(attendance[selectedDate][sheetSubjId]===status){
+    delete attendance[selectedDate][sheetSubjId];
+    if(!Object.keys(attendance[selectedDate]).length)delete attendance[selectedDate];
+  }else{
+    attendance[selectedDate][sheetSubjId]=status;
+  }
+  saveAtt();
+  const cur=(attendance[selectedDate]||{})[sheetSubjId]||null;
+  updateSheetBtns(cur);
+  const{present,absent,conducted,pct}=getStats(sheetSubjId);
+  document.getElementById('sheetPct').textContent=pct!==null?pct+'%':'—';
+  document.getElementById('sheetPresent').textContent=present;
+  document.getElementById('sheetAbsent').textContent=absent;
+  document.getElementById('sheetTotal').textContent=conducted;
+  renderSubjectList();
+}
+
+// ── GPS / PHOTOS ──
+function renderSheetPhotos(){
+  const pk=pKey(selectedDate,sheetSubjId),sp=photos[pk]||[];
+  const preview=document.getElementById('sheetPhotoPreview');
+  const btn=document.getElementById('sheetUploadBtn');
+  const gps=document.getElementById('sheetGps');
+  preview.innerHTML='';
+  btn.textContent=sp.length?'📷 '+sp.length+' photo'+(sp.length>1?'s':''):'📷 Upload';
+  btn.className='gps-upload-btn'+(sp.length?' has-photos':'');
+  gps.className='sheet-gps'+(sp.length?' has-photo':'');
+  sp.forEach((p,idx)=>{
+    const wrap=document.createElement('div');wrap.className='gps-thumb-wrap';
+    wrap.innerHTML=`<img class="gps-thumb" src="${p.dataUrl}"><button class="gps-thumb-del" onclick="deleteSheetPhoto(${idx},event)">✕</button>`;
+    wrap.querySelector('img').addEventListener('click',()=>openModal(p,sheetSubjId));
+    preview.appendChild(wrap);
+  });
+  if(sp.length){
+    const meta=document.createElement('div');meta.className='gps-meta';
+    const hasCoord=sp.some(p=>p.lat);
+    if(hasCoord){const last=[...sp].reverse().find(p=>p.lat);meta.innerHTML=`📍 <span class="coord">${last.lat}, ${last.lng}</span>`;}
+    else meta.innerHTML=`<span class="no-coord">⚠ No GPS in EXIF</span>`;
+    preview.appendChild(meta);
+  }
+}
+async function handleSheetPhoto(input){
+  const file=input.files[0];if(!file)return;
+  const dataUrl=await compressImage(file,900,0.78);
+  const gps=await extractGPS(file);
+  const pk=pKey(selectedDate,sheetSubjId);
+  if(!photos[pk])photos[pk]=[];
+  photos[pk].push({dataUrl,lat:gps?gps.lat:null,lng:gps?gps.lng:null,timestamp:new Date().toISOString(),filename:file.name});
+  savePhotos();
+  if(!attendance[selectedDate])attendance[selectedDate]={};
+  if(!attendance[selectedDate][sheetSubjId]){attendance[selectedDate][sheetSubjId]='present';saveAtt();}
+  input.value='';
+  renderSheetPhotos();
+  updateSheetBtns(attendance[selectedDate][sheetSubjId]);
+  renderSubjectList();
+}
+function deleteSheetPhoto(idx,e){
+  e.stopPropagation();
+  if(!confirm('Remove this photo?'))return;
+  const pk=pKey(selectedDate,sheetSubjId);
+  if(photos[pk]){photos[pk].splice(idx,1);if(!photos[pk].length)delete photos[pk];}
+  savePhotos();renderSheetPhotos();renderSubjectList();
+}
+function compressImage(file,maxW,q){
+  return new Promise(resolve=>{
+    const r=new FileReader();r.onload=e=>{
+      const img=new Image();img.onload=()=>{
+        const sc=Math.min(1,maxW/img.width),c=document.createElement('canvas');
+        c.width=Math.round(img.width*sc);c.height=Math.round(img.height*sc);
+        c.getContext('2d').drawImage(img,0,0,c.width,c.height);
+        resolve(c.toDataURL('image/jpeg',q));
+      };img.src=e.target.result;
+    };r.readAsDataURL(file);
+  });
+}
 function extractGPS(file){
   return new Promise(resolve=>{
     const reader=new FileReader();
     reader.onload=e=>{
       try{
-        const buf=e.target.result, view=new DataView(buf);
+        const buf=e.target.result,view=new DataView(buf);
         if(view.getUint16(0)!==0xFFD8){resolve(null);return;}
         let offset=2;
         while(offset<buf.byteLength-1){
-          const marker=view.getUint16(offset); offset+=2;
+          const marker=view.getUint16(offset);offset+=2;
           if(marker===0xFFE1){
             const segLen=view.getUint16(offset);
             const hdr=String.fromCharCode(view.getUint8(offset+2),view.getUint8(offset+3),view.getUint8(offset+4),view.getUint8(offset+5));
-            if(hdr==='Exif'){resolve(parseGPS(buf,offset+8,segLen-8));return;}
+            if(hdr==='Exif'){resolve(parseGPS(buf,offset+8));return;}
             offset+=segLen;
-          } else if((marker&0xFF00)===0xFF00){offset+=view.getUint16(offset);}else break;
+          }else if((marker&0xFF00)===0xFF00){offset+=view.getUint16(offset);}else break;
         }
       }catch(ex){}
       resolve(null);
@@ -930,209 +610,82 @@ function extractGPS(file){
 function parseGPS(buf,tiffStart){
   try{
     const view=new DataView(buf,tiffStart);
-    const le=view.getUint16(0)===0x4949, firstIFD=view.getUint32(4,le), entries=view.getUint16(firstIFD,le);
+    const le=view.getUint16(0)===0x4949,firstIFD=view.getUint32(4,le),entries=view.getUint16(firstIFD,le);
     let gpsOff=null;
     for(let i=0;i<entries;i++){const eo=firstIFD+2+i*12;if(view.getUint16(eo,le)===0x8825){gpsOff=view.getUint32(eo+8,le);break;}}
     if(!gpsOff)return null;
-    const ge=view.getUint16(gpsOff,le), gps={};
+    const ge=view.getUint16(gpsOff,le),gps={};
     for(let i=0;i<ge;i++){
-      const eo=gpsOff+2+i*12, tag=view.getUint16(eo,le), vOff=view.getUint32(eo+8,le);
+      const eo=gpsOff+2+i*12,tag=view.getUint16(eo,le),vOff=view.getUint32(eo+8,le);
       if(tag===1)gps.latRef=String.fromCharCode(view.getUint8(eo+8));
       if(tag===3)gps.lngRef=String.fromCharCode(view.getUint8(eo+8));
       if(tag===2||tag===4){
         const deg=view.getUint32(vOff,le)/view.getUint32(vOff+4,le);
         const min=view.getUint32(vOff+8,le)/view.getUint32(vOff+12,le);
         const sec=view.getUint32(vOff+16,le)/view.getUint32(vOff+20,le);
-        if(tag===2)gps.lat=deg+min/60+sec/3600; else gps.lng=deg+min/60+sec/3600;
+        if(tag===2)gps.lat=deg+min/60+sec/3600;else gps.lng=deg+min/60+sec/3600;
       }
     }
     if(gps.lat==null||gps.lng==null)return null;
-    if(gps.latRef==='S')gps.lat=-gps.lat; if(gps.lngRef==='W')gps.lng=-gps.lng;
+    if(gps.latRef==='S')gps.lat=-gps.lat;if(gps.lngRef==='W')gps.lng=-gps.lng;
     return{lat:gps.lat.toFixed(6),lng:gps.lng.toFixed(6)};
   }catch(e){return null;}
 }
 
-async function handlePhoto(dk,sId,input){
-  const file=input.files[0]; if(!file)return;
-  const dataUrl=await compressImage(file,900,0.78);
-  const gps=await extractGPS(file);
-  const pk=pKey(dk,sId); if(!photos[pk])photos[pk]=[];
-  photos[pk].push({dataUrl,lat:gps?gps.lat:null,lng:gps?gps.lng:null,timestamp:new Date().toISOString(),filename:file.name});
-  savePhotos();
-  if(!attendance[dk])attendance[dk]={};
-  if(!attendance[dk][sId]){attendance[dk][sId]='present';saveData();renderSubjectList();renderCalendar();}
-  input.value='';
-  renderDayPanel(dk,parseInt(dk.split('-')[2]));
-}
-
-function compressImage(file,maxW,q){
-  return new Promise(resolve=>{
-    const r=new FileReader(); r.onload=e=>{
-      const img=new Image(); img.onload=()=>{
-        const sc=Math.min(1,maxW/img.width),canvas=document.createElement('canvas');
-        canvas.width=Math.round(img.width*sc); canvas.height=Math.round(img.height*sc);
-        canvas.getContext('2d').drawImage(img,0,0,canvas.width,canvas.height);
-        resolve(canvas.toDataURL('image/jpeg',q));
-      }; img.src=e.target.result;
-    }; r.readAsDataURL(file);
-  });
-}
-
-function renderThumbs(dk,sId){
-  const pk=pKey(dk,sId), sp=photos[pk]||[];
-  const container=document.getElementById(`prev_${dk}_${sId}`); if(!container)return;
-  container.innerHTML='';
-  sp.forEach((p,idx)=>{
-    const wrap=document.createElement('div'); wrap.className='gps-thumb-wrap';
-    wrap.innerHTML=`<img class="gps-thumb" src="${p.dataUrl}"><button class="gps-thumb-del" onclick="deletePhoto('${dk}','${sId}',${idx},event)" title="Remove">✕</button>`;
-    wrap.querySelector('img').addEventListener('click',()=>openModal(p,sId));
-    container.appendChild(wrap);
-  });
-  const hasCoord=sp.some(p=>p.lat);
-  const metaDiv=document.createElement('div'); metaDiv.className='gps-meta';
-  if(hasCoord){const last=[...sp].reverse().find(p=>p.lat);metaDiv.innerHTML=`📍 <span class="coord">${last.lat}, ${last.lng}</span> · ${sp.length} photo${sp.length>1?'s':''}`;}
-  else{metaDiv.innerHTML=`<span class="no-coord">⚠ No GPS data in EXIF</span> · ${sp.length} photo${sp.length>1?'s':''}`;}
-  container.appendChild(metaDiv);
-  const sec=document.getElementById(`gps_${dk}_${sId}`);if(sec)sec.classList.toggle('has-photo',sp.length>0);
-}
-
-function deletePhoto(dk,sId,idx,event){
-  event.stopPropagation();
-  if(!confirm('Remove this photo?'))return;
-  const pk=pKey(dk,sId);
-  if(photos[pk]){photos[pk].splice(idx,1);if(!photos[pk].length)delete photos[pk];savePhotos();renderDayPanel(dk,parseInt(dk.split('-')[2]));}
-}
-
+// ── PHOTO MODAL ──
 function openModal(p,sId){
   const s=SUBJECTS.find(x=>x.id===sId)||{};
-  document.getElementById('modalTitle').textContent=`📸 ${s.code||''} — Attendance Proof`;
+  document.getElementById('modalTitle').textContent='📸 '+s.code+' — Proof';
   document.getElementById('modalImg').src=p.dataUrl;
-  const mr=document.getElementById('modalMetaRow'); mr.innerHTML='';
+  const mr=document.getElementById('modalMetaRow');mr.innerHTML='';
   const ts=p.timestamp?new Date(p.timestamp).toLocaleString('en-IN',{dateStyle:'medium',timeStyle:'short'}):'Unknown';
   mr.innerHTML+=`<div class="meta-chip">🕐 ${ts}</div>`;
   mr.innerHTML+=`<div class="meta-chip">📄 ${p.filename||'image'}</div>`;
   if(p.lat&&p.lng){
     mr.innerHTML+=`<div class="meta-chip coord-chip">📍 ${p.lat}, ${p.lng}</div>`;
-    mr.innerHTML+=`<a class="meta-chip coord-chip maps-chip" href="https://maps.google.com/?q=${p.lat},${p.lng}" target="_blank">🗺 View on Maps</a>`;
+    mr.innerHTML+=`<a class="meta-chip coord-chip" href="https://maps.google.com/?q=${p.lat},${p.lng}" target="_blank">🗺 Maps</a>`;
   }else{
-    mr.innerHTML+=`<div class="meta-chip warn-chip">⚠️ No GPS data in EXIF</div>`;
-    mr.innerHTML+=`<div class="meta-chip" style="font-size:10px;color:var(--muted)">Tip: Enable location on camera app</div>`;
+    mr.innerHTML+=`<div class="meta-chip warn-chip">⚠️ No GPS data</div>`;
   }
   document.getElementById('photoModal').classList.add('open');
 }
-function closeModal(){ document.getElementById('photoModal').classList.remove('open'); }
-document.getElementById('photoModal').addEventListener('click',e=>{ if(e.target===document.getElementById('photoModal'))closeModal(); });
+function closeModal(){document.getElementById('photoModal').classList.remove('open');}
+document.getElementById('photoModal').addEventListener('click',e=>{if(e.target===document.getElementById('photoModal'))closeModal();});
 
-function markAtt(dk,sId,status){
-  if(!attendance[dk])attendance[dk]={};
-  if(attendance[dk][sId]===status){delete attendance[dk][sId];if(!Object.keys(attendance[dk]).length)delete attendance[dk];}
-  else attendance[dk][sId]=status;
-  saveData(); renderSubjectList(); renderCalendar();
-  renderDayPanel(dk,parseInt(dk.split('-')[2]));
-}
-
-// ============ INIT ============
+// ── INIT ──
 function init(){
-  const today=getToday(); currentYear=today.y; currentMonth=today.m;
-  const mn=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  const dn=['Sun','Mon','Tue','Wed','Thu','Fri','Sat']; const now=new Date();
-  document.getElementById('todayLabel').textContent=`${dn[now.getDay()]}, ${now.getDate()} ${mn[now.getMonth()]} ${now.getFullYear()}`;
-  selectedDate=dateKey(today.y,today.m,today.d);
-  renderSubjectList(); renderCalendar(); renderDayPanel(selectedDate,today.d);
+  selectedDate=todayKey();
+  updateDateBar();
+  renderSubjectList();
 }
 
-// ============ AUTH CHECK ON LOAD ============
-window.addEventListener('load', () => {
-  if (firebaseInitialized) {
-    auth.onAuthStateChanged(user => {
-      if (user) {
-        currentUser = user;
-        loadAppData();
-        showApp();
-      } else {
-        showAuth();
-      }
+// ── AUTH CHECK ON LOAD ──
+window.addEventListener('load',()=>{
+  if(firebaseOK){
+    auth.onAuthStateChanged(user=>{
+      if(user){currentUser=user;loadData();showApp();}
+      else showAuth();
     });
-  } else {
-    // Demo mode - check if user is already logged in
-    const savedUser = localStorage.getItem('attendease_current_user');
-    if (savedUser) {
-      currentUser = JSON.parse(savedUser);
-      loadAppData();
-      showApp();
-    } else {
-      showAuth();
-    }
+  }else{
+    const saved=localStorage.getItem('ae_user');
+    if(saved){currentUser=JSON.parse(saved);loadData();showApp();}
+    else showAuth();
   }
 });
 
-// ============ SERVICE WORKER & PWA ============
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    const swCode = `
-const CACHE_NAME = 'attendease-v3';
-const urlsToCache = ['/'];
-
-self.addEventListener('install', event => {
-  event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(urlsToCache)).catch(() => {}));
-  self.skipWaiting();
-});
-
-self.addEventListener('activate', event => {
-  event.waitUntil(caches.keys().then(cacheNames => {
-    return Promise.all(cacheNames.map(cacheName => {
-      if (cacheName !== CACHE_NAME) return caches.delete(cacheName);
-    }));
-  }));
-  self.clients.claim();
-});
-
-self.addEventListener('fetch', event => {
-  if (event.request.method !== 'GET') return;
-  event.respondWith(
-    caches.match(event.request).then(response => {
-      return response || fetch(event.request).then(res => {
-        if (!res || res.status !== 200 || res.type !== 'basic') return res;
-        const responseToCache = res.clone();
-        caches.open(CACHE_NAME).then(cache => cache.put(event.request, responseToCache)).catch(() => {});
-        return res;
-      }).catch(() => caches.match('/'));
-    })
-  );
-});
-`;
-    const blob = new Blob([swCode], { type: 'application/javascript' });
-    const swUrl = URL.createObjectURL(blob);
-    navigator.serviceWorker.register(swUrl, { scope: '/' }).catch(() => {});
+// ── PWA ──
+if('serviceWorker' in navigator){
+  window.addEventListener('load',()=>{
+    const sw=`const C='ae-v1';self.addEventListener('install',e=>{self.skipWaiting();});self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.map(k=>k!==C&&caches.delete(k)))));self.clients.claim();});self.addEventListener('fetch',e=>{if(e.request.method!=='GET')return;e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request)));});`;
+    const blob=new Blob([sw],{type:'application/javascript'});
+    navigator.serviceWorker.register(URL.createObjectURL(blob),{scope:'/'}).catch(()=>{});
   });
 }
-
-// ============ INSTALL PROMPT ============
-let deferredPrompt = null;
-const installBtn = document.createElement('button');
-installBtn.className = 'install-btn';
-installBtn.innerHTML = '⬇️ Install App';
-installBtn.style.display = 'none';
-document.body.appendChild(installBtn);
-
-window.addEventListener('beforeinstallprompt', event => {
-  event.preventDefault();
-  deferredPrompt = event;
-  installBtn.style.display = 'flex';
-});
-
-installBtn.addEventListener('click', async () => {
-  if (!deferredPrompt) return;
-  deferredPrompt.prompt();
-  const { outcome } = await deferredPrompt.userChoice;
-  deferredPrompt = null;
-  installBtn.style.display = 'none';
-});
-
-window.addEventListener('appinstalled', () => {
-  installBtn.style.display = 'none';
-  deferredPrompt = null;
-});
+let deferredPrompt=null;
+const installBtn=document.getElementById('installBtn');
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;installBtn.style.display='flex';});
+installBtn.addEventListener('click',async()=>{if(!deferredPrompt)return;deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;installBtn.style.display='none';});
+window.addEventListener('appinstalled',()=>{installBtn.style.display='none';});
 </script>
 </body>
 </html>
